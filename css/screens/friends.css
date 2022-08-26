@@ -1,0 +1,57 @@
+#friends-display-link{
+    display:block;
+    text-align:center;
+    background-color: #fafafa;
+    padding:15px 0px;
+    font-size:18 px; 
+    margin-bottom: 10px;
+    margin-top: -15px;
+    /*채팅 창때문에 스크린 헤더에서 마진준것때문에 마이너스 마진 줌*/ 
+}
+
+#friends-display-link i{
+    color:rgba(0,0,0,0.3);
+    }
+
+
+.friends-screen__channel{
+     margin-top: 25px;
+     border-top:1px solid rgba(0, 0, 0, 0.2);
+     padding-top:15px;
+}
+
+.friends-screen__channel-header{
+    margin-bottom:30px;
+    display:flex;
+    justify-content:space-between;
+    color:rgba(0, 0, 0, 0.5);
+}    
+
+.friends-screen{
+    padding:0px var(--horizontal-space);
+}
+
+@keyframes hideSplashScreen{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+        visibility:hidden; /*이거 안하면 클릭 안됨*/
+    }
+}
+
+#splash-screen {
+    background-color: var(--yellow);
+    position:absolute; /*absolute는 가장 가까운 relative 부모 기준으로 움직인다
+    근데 여기선 왜쓴건지 모르겠음*/
+    height:100vh;
+    width:100vw;
+    top:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:130px;
+    animation:hideSplashScreen 0.4s ease-in-out forwards; /*forwards 마지막 값으로 유지*/
+    animation-delay:2s;
+}

@@ -1,0 +1,59 @@
+.screen-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:var(--horizontal-space);
+    margin-bottom: 15px;
+}
+
+.screen-header__title{
+    font-size:32px;
+    font-weight:600;
+}
+
+.screen-header_icons span{
+    margin-left:15px;
+}
+
+.screen-header_icons{
+    position:relative;
+}
+
+.screen-header__gear-dot{
+    display:flex;
+    background-color: tomato;
+    width:6px;
+    height:6px;
+    border-radius: 3px;
+    position:absolute;
+    left:58px;
+    bottom:18px;
+/*부모 포지션 렐러티브로 만들었는데 기준이 어디로 잡히는지 모르겠음.*/
+}
+
+.screen-header__gear-dot2{
+    display:flex;
+    background-color: tomato;
+    width:6px;
+    height:6px;
+    border-radius: 3px;
+    position:absolute;
+    left:98px;
+    bottom:18px;
+/*부모 포지션 렐러티브로 만들었는데 기준이 어디로 잡히는지 모르겠음.*/
+}
+
+
+@keyframes rotateGear{
+    from{
+        transform:none;
+    }
+    to{
+        transform:rotateZ(360deg);
+    }
+}
+
+.screen-header_icons .fa-gear:hover{
+    animation:rotateGear 1s linear infinite;
+
+}

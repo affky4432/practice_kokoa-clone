@@ -1,0 +1,62 @@
+<!--
+    메모용
+    BEM CSS 검색해볼것(block element modifier)
+    btn / btn--big / btn--orange / btn__price / btn__text
+    id 쓸수도 있으나 무조건 전부 class 사용한다
+    맨처음 써야할것 단축키 ! 엔터 누르면 다 나옴
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Kokoa Talk</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body>
+    <div class="status-bar">
+        <!--클래스 안에 띄어쓰기 하면 클래스 여러개 사용 가능-->
+        <div class="status-bar__column">
+            <span>No Service</span>
+            <!--To Do : wifi Icon-->
+            <i class="fa-solid fa-wifi"></i>
+        </div>
+        <div class="status-bar__column">
+            <span>18:43</span>
+        </div>
+        <div class="status-bar__column">
+            <span>110%</span>
+            <i class="fa-solid fa-battery-full fa-lg"></i>
+            <i class="fa-solid fa-bolt"></i>
+            <!--Battery Icon-->
+            <!--Lightning Icon-->
+            <!--폰트어썸에 아이콘 크기 바꾸는 설정 있다-->
+        </div>
+    </div>
+
+    <header class="welcome-header">
+        <h1 class="welcome-header__title">Welcome to Kokoa Clone</h1>
+        <p class="welcome-header__text">If you have a Kokoa Account, log in with your email</p>
+    </header>
+
+    <form action="friends.html" method="get" id="login-form">
+        <!--get 보안 취약.get과 post있다. 서버 있을땐 post.. 아무튼 다른 페이지로 옮겨줄수 있다 --> 
+        <input name="username" required type="text" placeholder="Email or phone number"/>
+        <!--required, optional 옵셔널이 기본-->
+        <input name="password" type="password" placeholder="Password"/>
+        <input type="submit" value="Log in" />
+        <a href="#">Find Kokoa Account or Password</a>
+    </form>
+
+
+    <div id="no-mobile">
+        <span>Your screen is too big</span>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a031118c80.js" crossorigin="anonymous"></script>
+<!--스크립트는 항상 바디 닫는곳 바로 위-->
+</body>
+</html>

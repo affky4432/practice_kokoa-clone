@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
+@import "reset.css";
+@import "variables.css";
+/* html보단 css에 두는게 좋다. html 복잡해짐*/
+
+/* Components */
+@import "components/status-bar.css";
+@import "components/nav-bar.css";
+@import "components/screen-header.css";
+@import "components/user-component.css";
+@import "components/badge.css";
+@import "components/icon-row.css";
+@import "components/alt-screen-header.css";
+@import "components/no-mobile.css";
+/*모든화면에 상태바 있기때문에 이렇게 하는게 좋다
+순서 중요. 순서대로 읽음*/
+@import "variables.css";
+
+/* Screens */
+@import "screens/login.css";
+@import "screens/friends.css";
+@import "screens/find.css";
+@import "screens/more.css";
+@import "screens/settings.css";
+@import "screens/chat.css";
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    color:#2e363e;
+}
+
+.main-screen {
+    padding:0px var(--horizontal-space);
+}
+/*모든스크린에 적용되는건 스타일에 적어둔다*/

@@ -1,0 +1,209 @@
+.alt-header__column span:last-child{
+    margin-left:10px;
+}
+
+#chat-screen {
+    background-color: #abc1d1;
+    height:1000vh;
+}
+
+#chat-screen .alt-header,
+#chat-screen .status-bar{    
+    position:fixed;
+    width: 100%;
+    box-sizing:border-box; /*이거 안하면 가리는거 생김*/
+    top:0;
+    background-color: #abc1d1;
+}
+
+#chat-screen .status-bar{
+    z-index:2;
+}
+/*z-index 레이어 값. 기본 0 숫자 높을수록 앞인듯*/
+#chat-screen .alt-header{
+    top:10px;
+    z-index:1;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform:none;
+    }
+
+}
+
+.main-chat{
+    margin-top:180px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    animation: fadeIn 0.8s linear;
+}
+
+.chat__timestamp{
+    color:white;
+    background-color:#92a4b2;
+    padding:15px;
+    border-radius:25px;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.message-row{
+    width:100%;
+    display:flex;
+    margin-bottom:25px;
+}
+
+.message-row img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    margin-right:10px;
+}
+
+.message__author{
+    opacity: 0.8;
+    font-size:13px;
+    margin-bottom:15px;
+    display:block; /*span이라 margin주려고 블록만듦*/
+}
+
+.message__info{
+
+    display:flex;
+    align-items:flex-end;/*시간 아래로 안내려감. 왜이래*/
+}
+
+.message__bubble{
+    background-color: white;
+    padding:8px 13px;
+    font-size:18px;
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    margin-right:5px;
+}
+
+.message__time,
+.message__author{
+    opacity: 0.8;
+    font-size:14px;
+}/*스타일 같다고 묶어버림*/
+
+.message-row--own{
+    justify-content: flex-end;
+}
+
+.message-row--own .message__bubble{
+    background-color: var(--yellow);
+    border-top-right-radius: 0px;
+    border-top-left-radius: 15px;
+    order:0;
+    margin-right: 0px;
+    margin-left:5px;
+}
+
+.message-row--own .message__bubble{
+    order:1;
+}
+/*flex children에게만 적용됨 순서가 바뀐다.
+혹은 message-row--own .message__info{
+    flex-direction:row-reverse;
+    이걸로.*/
+
+.reply {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background-color: white;
+    display:flex;
+    justify-content: space-between;
+    padding:5px 25px;
+    align-items: center;
+    box-sizing:border-box ;
+    transition:all 0.3s ease-in-out;
+}
+
+.reply i{
+    opacity:0.5;
+}
+
+.reply .reply__column:first-child{
+    width:10%;
+}
+
+.reply .reply__column:last-child{
+    width:90%;
+
+}
+
+
+.reply input{
+    height:30px;
+    width:100%;
+    border:var(--main-border);
+    border-radius:20px;
+    padding:0px 10px;
+    transition:all 0.3s ease-in-out;
+
+}
+
+.reply__column:last-child > i, /* > 바로 밑의 자식 지정할때 사용*/
+.reply__column:last-child button{
+    position: absolute;
+    right:6px;
+    top:6px;
+}
+
+.reply__column:last-child > i{
+    right:45px;
+    top:14px;
+}
+
+.reply__column button{
+
+    background-color: var(--yellow);
+    border:none;
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+
+}
+
+.reply__column button:focus,
+.reply__column button:active {
+    outline:none;
+}
+
+.reply__column button i{
+    opacity: 1;
+}
+/*reply의 자식이 focus되면 reply__column 첫번째 자식에서 작동
+reply 내부에 focus된 element가 있는지 확인한다 within
+state selector*/
+.reply .reply__column:first-child,
+.reply .fa-face-grin-tongue-squint,
+.reply button{
+    transition:opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-grin-tongue-squint,
+.reply:focus-within button{
+    opacity:0;
+}
+
+.reply:focus-within input {
+    width:98vw;
+    transform:translateX(-13%) translateY(-80px);
+}
+
+/*아래처럼 바꾸고 싶어서 추가했으면 reply가서 transitio만 추가하면 됨*/
+.reply:focus-within{
+    transform:translateY(80px)
+}

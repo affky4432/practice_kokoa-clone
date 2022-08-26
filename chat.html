@@ -1,0 +1,106 @@
+<!--
+    메모용
+        nav 네비게이션 안의 ul 속 li 구글이 읽어간다. 단축키 nav>ul>li*4
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Kokoa Talk</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+
+
+<body id="chat-screen">
+    <div class="status-bar">
+        <!--클래스 안에 띄어쓰기 하면 클래스 여러개 사용 가능-->
+        <div class="status-bar__column">
+            <span>No Service</span>
+            <!--To Do : wifi Icon-->
+            <i class="fa-solid fa-wifi"></i>
+        </div>
+        <div class="status-bar__column">
+            <span>18:43</span>
+        </div>
+        <div class="status-bar__column">
+            <span>110%</span>
+            <i class="fa-solid fa-battery-full fa-lg"></i>
+            <i class="fa-solid fa-bolt"></i>
+            <!--Battery Icon-->
+            <!--Lightning Icon-->
+            <!--폰트어썸에 아이콘 크기 바꾸는 설정 있다-->
+        </div>
+    </div>
+
+    <header class="alt-header">
+        <div class="alt-header__column">
+            <a href="chats.html">
+            <i class="fa-solid fa-angle-left fa-3x"></i>
+            </a>    
+        </div>
+        <div class="alt-header__column">
+            <h1 class="alt-header__title">Karina</h1>
+        </div>
+        <div class="alt-header__column">
+            <span><i class="fa-solid fa-magnifying-glass fa-2x" ></i></span>
+            <span><i class="fa-solid fa-bars fa-2x"></i></span>
+            <!--SPAN 왜 붙이는지?-->
+        </div>
+    </header>
+
+
+
+<!--.find-icons__icon*4>span 이걸로 만들었다-->
+<main class="main-screen main-chat">
+
+        <div class="chat__timestamp">
+            Tuesday, June 30, 2020
+        </div>
+
+        <div class="message-row">
+            <img src="https://cdn.pixabay.com/photo/2017/08/30/12/45/girl-2696947__340.jpg">
+            <div class="message-row__content">
+                <span class="message__author">Karina</span>
+                <div class="message__info">
+                    <span class="message__bubble">Hi</span>
+                    <span class="message__time">21:27</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="message-row message-row--own"> <!--클래스 두개 쓰는게 modifier?-->
+            <div class="message-row__content">
+                <div class="message__info">
+                    <span class="message__bubble">Hi</span>
+                    <span class="message__time">21:27</span>
+                </div>
+            </div>
+        </div>
+
+</main>
+<!--단축키로 만들때  .user-component__column*2--> 
+
+<form class="reply">
+    <div class="reply__column">
+        <i class="fa-regular fa-square-plus fa-lg"></i>
+    </div>
+    
+    <div class="reply__column">
+        <input type="text" placeholder="Wirte a message...">    
+        <i class="fa-regular fa-face-grin-tongue-squint"></i>
+        <button>
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </div>
+</form>
+<div id="no-mobile">
+    <span>Your screen is too big</span>
+</div>
+    <script src="https://kit.fontawesome.com/a031118c80.js" crossorigin="anonymous"></script>
+<!--스크립트는 항상 바디 닫는곳 바로 위-->
+</body>
+</html>
